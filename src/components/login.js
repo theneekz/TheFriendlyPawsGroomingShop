@@ -2,7 +2,7 @@ import React from 'react';
 import fireApp from './fire';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const Login = () => {
   const [user, loading, error] = useAuthState(fireApp.auth());
@@ -39,6 +39,9 @@ const Login = () => {
     return (
       <div>
         <p>Current User: {user.email}</p>
+        <Link to="/schedule">
+          <button>Book Now</button>
+        </Link>
         <button onClick={logout}>Log out</button>
       </div>
     );
@@ -48,7 +51,7 @@ const Login = () => {
 
   return (
     <div>
-      <div>
+      <div className="mainLogo">
         <img src="FP.png" />
       </div>
       <div className="container">

@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+/* unvisited link */
+a:link {
+  color: rgb(236, 139, 151);
+}
+
+/* visited link */
+a:visited {
+  color: rgb(236, 139, 151);
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(236, 139, 151);
+}
+
+/* selected link */
+a:active {
+  color: rgb(220, 200, 195);
+}
+
+body {
+  background: rgb(236, 139, 151);
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+nav {
+  background-color: rgb(180, 235, 213);
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  align-self: baseline;
+  justify-content: space-evenly;
+}
+
+nav div {
+  align-self: center;
+}
+
+input {
+  margin: 10px;
+}
+
+button {
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #47a09d;
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home img {
+  display: flex;
+  align-items: center;
+  height: 50%;
+  width: 50%;
+}
+
+.mainLogo {
+  text-align: center;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.hide {
+  display: none;
+}
+
+td {
+  display: table-cell;
+  vertical-align: inherit;
+  padding-right: 20px;
+}
+
+tr {
+  border-spacing: 10px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
+}
