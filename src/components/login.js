@@ -1,8 +1,8 @@
 import React from 'react';
-import fireApp from './fire';
+import fireApp from './fireAuth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [user, loading, error] = useAuthState(fireApp.auth());

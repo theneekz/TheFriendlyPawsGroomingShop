@@ -1,5 +1,5 @@
 import React from 'react';
-import fireApp from './fire';
+import fireApp from './fireAuth';
 import { useForm } from 'react-hook-form';
 
 export default function Register() {
@@ -16,7 +16,7 @@ export default function Register() {
 
   return (
     <div>
-      <div>
+      <div className="mainLogo">
         <img src="FP.png" />
       </div>
       <div className="container">

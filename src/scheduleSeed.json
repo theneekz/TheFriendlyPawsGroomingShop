@@ -1,0 +1,62 @@
+{
+  "Monday": {
+    "10:00 AM - 10:30 AM": {
+      "Availability": "Available",
+      "Service": "",
+      "Client": ""
+    },
+    "10:30 AM - 11:00 AM": {
+      "Availability": "Reserved",
+      "Service": "Hair cut",
+      "Client": "Cody"
+    }
+  },
+  "Tuesday": {
+    "10:00 AM - 10:30 AM": {
+      "Availability": "Available",
+      "Service": "",
+      "Client": ""
+    },
+    "10:30 AM - 11:00 AM": {
+      "Availability": "Reserved",
+      "Service": "Nail Trim",
+      "Client": "Cody"
+    }
+  },
+  "Wednesday": {
+    "10:00 AM - 10:30 AM": {
+      "Availability": "Available",
+      "Service": "",
+      "Client": ""
+    },
+    "10:30 AM - 11:00 AM": {
+      "Availability": "Reserved",
+      "Service": "Bath",
+      "Client": "Cody"
+    }
+  },
+  "Thursday": {
+    "10:00 AM - 10:30 AM": {
+      "Availability": "Available",
+      "Service": "",
+      "Client": ""
+    },
+    "10:30 AM - 11:00 AM": {
+      "Availability": "Reserved",
+      "Service": "Bath",
+      "Client": "Cody"
+    }
+  },
+  "Friday": {
+    "10:00 AM - 10:30 AM": {
+      "Availability": "Available",
+      "Service": "",
+      "Client": ""
+    },
+    "10:30 AM - 11:00 AM": {
+      "Availability": "Reserved",
+      "Service": "Bath",
+      "Client": "Cody"
+    }
+  }
+}

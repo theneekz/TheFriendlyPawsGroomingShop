@@ -1,10 +1,14 @@
 import React from 'react';
-import fireApp from './fire';
+import fireApp from './fireAuth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 
 export default function Schedule() {
   const [user] = useAuthState(fireApp.auth());
+
+  const dbRefObj = fireApp.database().ref();
+  dbRefObj.on('value', (snap) => console.log(snap.val()));
+
   const services = () => (
     <select>
       <option value="">-</option>
@@ -37,12 +41,14 @@ export default function Schedule() {
     <div>
       <h1>{day}</h1>
       <table>
-        <tr>
-          <th>TIME SLOT</th>
-          <th>AVAILABILITY</th>
-          <th>SERVICE</th>
-        </tr>
-        {slots.map((slot) => row(slot))}
+        <thead>
+          <tr>
+            <th>TIME SLOT</th>
+            <th>AVAILABILITY</th>
+            <th>SERVICE</th>
+          </tr>
+        </thead>
+        <tbody>{slots.map((slot) => row(slot))}</tbody>
       </table>
     </div>
   );

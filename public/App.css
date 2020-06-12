@@ -57,6 +57,27 @@ button {
 button:hover {
   background-color: #47a09d;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+td {
+  display: table-cell;
+  vertical-align: inherit;
+  padding-right: 20px;
+}
+
+tr {
+  border-spacing: 10px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -74,6 +95,7 @@ button:hover {
 .mainLogo {
   text-align: center;
 }
+
 .container {
   display: flex;
   align-items: center;
@@ -81,26 +103,25 @@ button:hover {
   flex-direction: column;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-
 .hide {
   display: none;
 }
 
-td {
-  display: table-cell;
-  vertical-align: inherit;
-  padding-right: 20px;
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-tr {
-  border-spacing: 10px;
+.serviceList {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
 }
 
-table {
-  border-collapse: separate;
-  border-spacing: 2px;
+.service {
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
 }
