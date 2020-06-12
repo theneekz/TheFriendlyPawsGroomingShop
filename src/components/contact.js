@@ -65,24 +65,37 @@ export default function Contact() {
         </div>
       </div>
       <div className="home">
-        <h2>About Us</h2>
-        <p>
+        <h1>About Us</h1>
+        <h2>
           Friendly Paws is a dog grooming business on the North East side of
-          Chicago in Edison Bark - I mean Park. But there is only one employee!
+          Chicago in Edison Bark - I mean Park.
+          <br />
+          But there is only one employee!
+          <br />
           To help with scheduling her paw-esome clients, the owner would like a
-          site for making appointments. That way she can spend less time barking
-          on the phone and more time pampering her pals.
-        </p>
-        <p>
-          Open 6 days a week from 7:30am - 2pm on weekdays, 9am - 1pm on
-          Saturdays, this app will aim to allow customers to sign up for a Nail
-          Trim, a Hair Cut, or a Bath and Tidy (en-tails a bath, teeth cleaning,
-          hair cut, and nail trim). Each customer will have to create an
-          account, enter the pampering option they would like their pal to
-          receive, and most importantly - select the date and time. As patrons
-          fill up the schedule, new customers should be unable to reserve the
-          booked time slots.
-        </p>
+          site for making appointments.
+          <br />
+          That way she can spend less time barking on the phone and more time
+          pampering her pals.
+          <br />
+          <p>
+            Open 6 days a week from 7:30am - 2pm on weekdays, 9am - 1pm on
+            Saturdays, <br />
+            this app will aim to allow customers to sign up for a Nail Trim, a
+            Hair Cut,
+            <br />
+            or a Bath and Tidy (en-tails a bath, teeth cleaning, hair cut, and
+            nail trim).
+            <br />
+            Each customer will have to create an account, enter the pampering
+            option they would like their pal to receive,
+            <br />
+            and most importantly - select the date and time.
+            <br />
+            As patrons fill up the schedule, new customers should be unable to
+            reserve the booked time slots.
+          </p>
+        </h2>
       </div>
     </div>
   );

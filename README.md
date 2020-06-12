@@ -5,11 +5,13 @@ mean Park. But there is only one employee! To help with scheduling her paw-esome
 the owner would like a site for making appointments. That way she can spend less time barking
 on the phone and more time pampering her pals.
 
-Open 7 days a week from 10am - 6pm, this app will aim to allow customers to sign
-up for (A) a Nail Trim, (B) a Hair Cut, or (C) a Bath and Tidy (en-tails a bath, teeth cleaning, hair cut, and nail trim).
-Each customer will have to create an account, enter their dog's name,
-enter the pampering option they would like their pal to receive, and most importantly - the
-date and time. As patrons fill up the schedule, new customers should be unable to reserve the
+Open 6 days a week from 7:30am - 2pm on weekdays, 9am - 1pm on
+Saturdays, this app will aim to allow customers to sign up for a Nail
+Trim, a Hair Cut, or a Bath and Tidy (en-tails a bath, teeth cleaning,
+hair cut, and nail trim). Each customer will have to create an
+account, enter the pampering option they would like their pal to
+receive, and most importantly - select the date and time. As patrons
+fill up the schedule, new customers should be unable to reserve the
 booked time slots.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
