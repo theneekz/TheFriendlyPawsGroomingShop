@@ -18,12 +18,12 @@ export default function Home() {
         </h3>
 
         <h2>Some Of Our PAWesome Clients:</h2>
-        <img src="1.jpg" />
-        <img src="2.jpg" />
-        <img src="3.jpg" />
-        <img src="4.jpg" />
-        <img src="5.jpg" />
-        <img src="6.jpg" />
+        <img className="homeDog" src="1.jpg" />
+        <img className="homeDog" src="2.jpg" />
+        <img className="homeDog" src="3.jpg" />
+        <img className="homeDog" src="4.jpg" />
+        <img className="homeDog" src="5.jpg" />
+        <img className="homeDog" src="6.jpg" />
       </div>
     </div>
   );

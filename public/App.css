@@ -1,6 +1,20 @@
 * {
   box-sizing: border-box;
 }
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.8rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+p {
+  font-size: 1rem;
+}
 /* unvisited link */
 a:link {
   color: rgb(236, 139, 151);
@@ -28,6 +42,7 @@ body {
   width: 100vw;
   flex-direction: column;
   font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 24px;
 }
 
 nav {
@@ -96,6 +111,12 @@ table {
   text-align: center;
 }
 
+.homeDog {
+  background-color: rgb(180, 235, 213);
+  margin: 5px;
+  padding: 5px;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -111,6 +132,13 @@ table {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.about {
+  background-color: rgb(180, 235, 213);
+  border-radius: 10px;
+  border: 10px;
+  width: 70%;
 }
 
 .serviceList {

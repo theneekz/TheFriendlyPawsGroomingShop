@@ -66,18 +66,12 @@ export default function Contact() {
       </div>
       <div className="home">
         <h1>About Us</h1>
-        <h2>
+        <h2 className="about">
           Friendly Paws is a dog grooming business on the North East side of
-          Chicago in Edison Bark - I mean Park.
-          <br />
-          But there is only one employee!
-          <br />
+          Chicago in Edison Bark - I mean Park. But there is only one employee!
           To help with scheduling her paw-esome clients, the owner would like a
-          site for making appointments.
-          <br />
-          That way she can spend less time barking on the phone and more time
-          pampering her pals.
-          <br />
+          site for making appointments. That way she can spend less time barking
+          on the phone and more time pampering her pals.
           <p>
             Open 6 days a week from 7:30am - 2pm on weekdays, 9am - 1pm on
             Saturdays, <br />

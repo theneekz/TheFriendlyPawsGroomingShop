@@ -8,7 +8,10 @@ export default function Schedule() {
 
   const dbRefObj = fireApp.database().ref();
 
-  dbRefObj.on('value', (snap) => console.log(snap.val()));
+  dbRefObj.on('value', (snap) => {
+    console.log(snap.val().Friday);
+    // console.log('Day: ', parent);
+  });
 
   const services = () => (
     <select>
