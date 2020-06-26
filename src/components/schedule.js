@@ -64,14 +64,15 @@ export default function Schedule() {
       <div key={dayArr[0].id}>
         <h1>{moment(dayArr[0].date).format('dddd, MMMM Do YYYY')}</h1>
         <div className="divTable">
-          <div className="divHead">
-            <div className="divCell">TIME SLOT</div>
-            <div className="divCell">AVAILABILITY</div>
-            <div className="divCell">SERVICE</div>
-          </div>
-
           <div className="divBody">
-            {dayArr.map((hourData) => row(hourData))}
+            <div className="divHead">
+              <div className="divCell">TIME SLOT</div>
+              <div className="divCell">AVAILABILITY</div>
+              <div className="divCell">SERVICE</div>
+            </div>
+            <div className="divBody">
+              {dayArr.map((hourData) => row(hourData))}
+            </div>
           </div>
         </div>
       </div>
@@ -80,27 +81,34 @@ export default function Schedule() {
 
   //takes in each appt and creates a row with time, availability, service, and a book now button
   let row = (hourData) => (
-    <div key={hourData.id} className="divRow">
-      <form
-        name={hourData.date}
-        className="bookForm"
-        onChange={(e) => handleChange(e)}
-        onSubmit={(e) => handleSubmit(e)}
-      >
-        <div key={hourData.slot} name="slot" className="divCell">
-          {moment(hourData.slot, 'HH:mm:ss').format('h:mm:ss A')}
-        </div>
-        <div name="availability" className="divCell">
-          {hourData.availability}
-        </div>
-        <div name="service" className="divCell">
-          {services(hourData.service)}
-        </div>
+    <form
+      key={hourData.id}
+      name={hourData.date}
+      className="divFormRow"
+      onChange={(e) => handleChange(e)}
+      onSubmit={(e) => handleSubmit(e)}
+    >
+      <div key={hourData.slot} name="slot" className="divCell">
+        {moment(hourData.slot, 'HH:mm:ss').format('h:mm:ss A')}
+      </div>
+      <div name="availability" className="divCell">
+        {hourData.availability}
+      </div>
+      <div name="service" className="divCell">
+        {services(hourData.service)}
+      </div>
+      {hourData.availability === 'Available' ? (
         <div className="divCell">
           <button type="submit">Book Appointment</button>
         </div>
-      </form>
-    </div>
+      ) : user && hourData.availability === user.email ? (
+        <div className="divCell">
+          <button>Cancel Appointment</button>
+        </div>
+      ) : (
+        <div className="divCell">Booked</div>
+      )}
+    </form>
   );
 
   //this will be a drop down menu if there is availability, otherwise it will display the service that is already reserved
@@ -132,7 +140,7 @@ export default function Schedule() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:3001/api/appointments', newAppt);
+    await axios.put('http://localhost:3001/api/appointments', newAppt);
     window.location.reload(false);
   };
 

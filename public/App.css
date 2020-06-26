@@ -164,25 +164,26 @@ button:hover {
   display: table;
   width: 80%;
 }
-.divRow {
-  display: table-row;
-}
 .divHead {
   background-color: #eee;
   display: table-header-group;
 }
-.divCell {
-  border: 1px solid #999999;
+.divCol {
   display: table-cell;
+  background-color: green;
   padding: 3px 10px;
+  border: 1px solid #999999;
 }
-
 .divBody {
   display: table-row-group;
 }
 
-form {
+.divFormRow {
+  display: table-row;
 }
 
-.bookForm {
+.divCell {
+  border: 1px solid #999999;
+  display: table-cell;
+  padding: 3px 10px;
 }

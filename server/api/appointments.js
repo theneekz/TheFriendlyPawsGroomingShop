@@ -22,7 +22,7 @@ router.get('/', async (req, res, next) => {
 });
 
 //update appointment to booked with user's email & service
-router.post('/', async (req, res, next) => {
+router.put('/', async (req, res, next) => {
   try {
     const foundApt = await Appointments.findOne({
       where: {
