@@ -1,5 +1,7 @@
 import React from 'react';
 import Home from './home';
+import fireApp from './fireAuth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import Login from './login';
 import Register from './register';
 import Services from './services';
@@ -13,6 +15,7 @@ import {
 } from 'react-router-dom';
 
 function App() {
+  const [user] = useAuthState(fireApp.auth());
   return (
     <div className="App">
       <Router>
@@ -39,7 +42,7 @@ function App() {
           </div>
           <div>
             <h1>
-              <NavLink to="/login">LOGIN</NavLink>
+              <NavLink to="/login">{user ? 'LOGOUT' : 'LOGIN'}</NavLink>
             </h1>
           </div>
         </nav>

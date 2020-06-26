@@ -8,7 +8,12 @@ import moment from 'moment';
 export default function Schedule() {
   const [user] = useAuthState(fireApp.auth());
   const [apts, setApts] = useState([]);
-  const [newAppt, setNewAppt] = useState({ date: '', slot: '', service: '' });
+  const [newAppt, setNewAppt] = useState({
+    date: '',
+    slot: '',
+    service: '',
+    user: '',
+  });
 
   //react hook to run as component did mount (hence the empty array as second arg)
   //initializes async axios request func and then immediately calls it
@@ -122,13 +127,13 @@ export default function Schedule() {
     // console.log('slot: ', slot);
     // console.log('date: ', date);
 
-    setNewAppt({ date, slot, service });
+    setNewAppt({ date, slot, service, user: user.email });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(e.target.children.slot.innerText);
-    // console.log(newAppt);
+    console.log(newAppt);
   };
 
   return (
