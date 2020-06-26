@@ -87,7 +87,7 @@ export default function Schedule() {
         onChange={(e) => handleChange(e)}
         onSubmit={(e) => handleSubmit(e)}
       >
-        <div name="slot" className="divCell">
+        <div key={hourData.slot} name="slot" className="divCell">
           {moment(hourData.slot, 'HH:mm:ss').format('h:mm:ss A')}
         </div>
         <div name="availability" className="divCell">
@@ -130,10 +130,10 @@ export default function Schedule() {
     setNewAppt({ date, slot, service, user: user.email });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(e.target.children.slot.innerText);
-    console.log(newAppt);
+    await axios.post('http://localhost:3001/api/appointments', newAppt);
+    window.location.reload(false);
   };
 
   return (

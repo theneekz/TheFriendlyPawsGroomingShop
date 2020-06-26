@@ -28,7 +28,6 @@ a:visited {
 /* mouse over link */
 a:hover {
   color: rgb(180, 235, 213);
-  background-color: rgb(236, 139, 151);
 }
 
 /* selected link */
@@ -57,6 +56,11 @@ nav {
 
 nav div {
   align-self: center;
+}
+
+nav a:hover {
+  color: rgb(180, 235, 213);
+  background-color: rgb(236, 139, 151);
 }
 
 input {
