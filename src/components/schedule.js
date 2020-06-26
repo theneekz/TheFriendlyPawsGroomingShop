@@ -52,7 +52,7 @@ export default function Schedule() {
     return;
   };
 
-  //uses the above func with our result from the axios request we're storing on state
+  //uses the above func with our week's worth of appts we're storing on state
   let bookings = makeDays(apts);
 
   //takes all of one day's appointments (array of objs)

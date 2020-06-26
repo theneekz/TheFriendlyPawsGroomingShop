@@ -18,8 +18,9 @@
     "volleyball": "^1.5.1"
   },
   "scripts": {
-    "start": "react-scripts start node /server/index.js",
     "seed": "node server/db/seed.js",
+    "server": "node ./server/index.js ",
+    "start": "react-scripts start ",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },

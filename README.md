@@ -20,9 +20,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts For Developers
 
-In the project directory, you can run:
+After requesting access for the firebase config file, in the project directory you can run:
 
-### `npm start`
+### `npm run seed`
+
+Seeds the app with one work week's worth of empty appointments.<br />
+
+### `npm run server`
+
+Starts an express server on port 3001 that listens for all backend requests.
+
+### In another terminal run `npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
