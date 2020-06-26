@@ -20,7 +20,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts For Developers
 
-After requesting access for the firebase config file, in the project directory you can run:
+After requesting access for the firebase config file, and opening postgres, in the project directory you can run:
+
+### `npm install`
+
+Installs all required dependencies<br />
+
+### `createdb fpgs`
+
+Creates a databse for the Friendly Paws Grooming Shop.<br />
 
 ### `npm run seed`
 
