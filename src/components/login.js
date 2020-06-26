@@ -55,7 +55,7 @@ const Login = () => {
         <img src="FP.png" />
       </div>
       <div className="container">
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
           <input
             type="email"
             placeholder="Email"

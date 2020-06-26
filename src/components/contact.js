@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <div>
+    <div className="contactParent">
       <div className="contact">
         <div>
           <h1>7746 W Devon Ave Chicago, Illinois 60631</h1>
@@ -53,20 +53,23 @@ export default function Contact() {
             </tbody>
           </table>
           <h2>Phone: (312) 715-8233</h2>
-          <a href="https://www.facebook.com/thefriendlypawsgrooming">
-            <img src="fb.png" />
-          </a>
-          <a href="https://www.instagram.com/thefriendlypawsgrooming">
-            <img src="insta.png" />
-          </a>
-          <a href="mailto:thefriendlypawsgrooming@gmail.com">
-            <img src="email.png" />
-          </a>
+          <div className="socials">
+            <a href="https://www.facebook.com/thefriendlypawsgrooming">
+              <img src="fb.png" />
+            </a>
+            <a href="https://www.instagram.com/thefriendlypawsgrooming">
+              <img src="insta.png" />
+            </a>
+            <a href="mailto:thefriendlypawsgrooming@gmail.com">
+              <img src="email.png" />
+            </a>
+          </div>
         </div>
       </div>
-      <div className="home">
+      <div className="home about">
         <h1>About Us</h1>
-        <h2 className="about">
+        <hr />
+        <h2>
           Friendly Paws is a dog grooming business on the North East side of
           Chicago in Edison Bark - I mean Park. But there is only one employee!
           To help with scheduling her paw-esome clients, the owner would like a

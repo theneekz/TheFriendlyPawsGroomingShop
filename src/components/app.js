@@ -5,7 +5,12 @@ import Register from './register';
 import Services from './services';
 import Contact from './contact';
 import Schedule from './schedule';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from 'react-router-dom';
 
 function App() {
   return (
@@ -14,27 +19,27 @@ function App() {
         <nav>
           <div>
             <h1>
-              <Link to="/">HOME</Link>
+              <NavLink to="/">HOME</NavLink>
             </h1>
           </div>
           <div>
             <h1>
-              <Link to="/services">SERVICES</Link>
+              <NavLink to="/services">SERVICES</NavLink>
             </h1>
           </div>
           <div>
             <h1>
-              <Link to="/contact">CONTACT US</Link>
+              <NavLink to="/contact">CONTACT US</NavLink>
             </h1>
           </div>
           <div>
             <h1>
-              <Link to="/schedule">BOOK NOW</Link>
+              <NavLink to="/schedule">BOOK NOW</NavLink>
             </h1>
           </div>
           <div>
             <h1>
-              <Link to="/login">LOGIN</Link>
+              <NavLink to="/login">LOGIN</NavLink>
             </h1>
           </div>
         </nav>

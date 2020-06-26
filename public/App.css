@@ -27,7 +27,8 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: rgb(236, 139, 151);
+  color: rgb(180, 235, 213);
+  background-color: rgb(236, 139, 151);
 }
 
 /* selected link */
@@ -51,7 +52,7 @@ nav {
   width: 100vw;
   display: flex;
   align-self: baseline;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 nav div {
@@ -75,22 +76,15 @@ button:hover {
 
 form {
   display: flex;
+}
+
+.test {
+  display: table-row;
+}
+
+.loginForm {
+  display: flex;
   flex-direction: column;
-}
-
-td {
-  display: table-cell;
-  vertical-align: inherit;
-  padding-right: 20px;
-}
-
-tr {
-  border-spacing: 10px;
-}
-
-table {
-  border-collapse: separate;
-  border-spacing: 2px;
 }
 
 .home {
@@ -128,17 +122,33 @@ table {
   display: none;
 }
 
+.contactParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .contact {
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .about {
+  display: flex;
   background-color: rgb(180, 235, 213);
   border-radius: 10px;
   border: 10px;
-  width: 70%;
+  width: 80%;
+  justify-content: center;
 }
 
 .serviceList {
@@ -152,4 +162,25 @@ table {
   border-style: solid;
   border-color: black;
   text-align: center;
+}
+
+.divTable {
+  display: table;
+  width: 80%;
+}
+.divRow {
+  display: table-row;
+}
+.divHead {
+  background-color: #eee;
+  display: table-header-group;
+}
+.divCell {
+  border: 1px solid #999999;
+  display: table-cell;
+  padding: 3px 10px;
+}
+
+.divBody {
+  display: table-row-group;
 }
