@@ -8,7 +8,7 @@ import moment from 'moment';
 export default function Schedule() {
   const [user] = useAuthState(fireApp.auth());
   const [apts, setApts] = useState([]);
-  const [newAppt, setNewAppt] = useState({});
+  const [newAppt, setNewAppt] = useState({ date: '', slot: '', service: '' });
 
   //react hook to run as component did mount (hence the empty array as second arg)
   //initializes async axios request func and then immediately calls it
@@ -76,12 +76,21 @@ export default function Schedule() {
   //takes in each appt and creates a row with time, availability, service, and a book now button
   let row = (hourData) => (
     <div key={hourData.id} className="divRow">
-      <form className="test">
-        <div className="divCell">
+      <form
+        name={hourData.date}
+        className="bookForm"
+        onChange={(e) => handleChange(e)}
+        onSubmit={(e) => handleSubmit(e)}
+      >
+        <div name="slot" className="divCell">
           {moment(hourData.slot, 'HH:mm:ss').format('h:mm:ss A')}
         </div>
-        <div className="divCell">{hourData.availability}</div>
-        <div className="divCell">{services(hourData.service)}</div>
+        <div name="availability" className="divCell">
+          {hourData.availability}
+        </div>
+        <div name="service" className="divCell">
+          {services(hourData.service)}
+        </div>
         <div className="divCell">
           <button type="submit">Book Appointment</button>
         </div>
@@ -95,7 +104,7 @@ export default function Schedule() {
       return <div className="divCell">{serviceOption}</div>;
     } else {
       return (
-        <select>
+        <select name="service">
           <option value="">-</option>
           <option value="Nail Trim">Nail Trim</option>
           <option value="Haircut">Haircut</option>
@@ -105,10 +114,22 @@ export default function Schedule() {
     }
   };
 
-  // const handleSubmit = (e) => {
-  //   e.prevent.default();
-  //   console.log(event.target.value);
-  // };
+  const handleChange = (e) => {
+    let service = e.target.value;
+    let slot = e.currentTarget.children.slot.innerText;
+    let date = e.currentTarget.name;
+    // console.log('service: ', service);
+    // console.log('slot: ', slot);
+    // console.log('date: ', date);
+
+    setNewAppt({ date, slot, service });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log(e.target.children.slot.innerText);
+    // console.log(newAppt);
+  };
 
   return (
     <div>

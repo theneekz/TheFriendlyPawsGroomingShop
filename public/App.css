@@ -74,14 +74,6 @@ button:hover {
   background-color: #47a09d;
 }
 
-form {
-  display: flex;
-}
-
-.test {
-  display: table-row;
-}
-
 .loginForm {
   display: flex;
   flex-direction: column;
@@ -183,4 +175,10 @@ form {
 
 .divBody {
   display: table-row-group;
+}
+
+form {
+}
+
+.bookForm {
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import fireApp from './fireAuth';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 export default function Register() {
   const { register, handleSubmit, errors } = useForm();
@@ -20,7 +21,7 @@ export default function Register() {
         <img src="FP.png" />
       </div>
       <div className="container">
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
           <input
             type="email"
             placeholder="Email"
@@ -56,6 +57,9 @@ export default function Register() {
 
           <button type="submit">Register</button>
         </form>
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
       </div>
     </div>
   );
