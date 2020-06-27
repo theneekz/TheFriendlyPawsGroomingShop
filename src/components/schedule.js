@@ -3,19 +3,13 @@ import fireApp from './fireAuth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import moment from 'moment';
+import Day from './dayTable';
 
 export default function Schedule() {
   const [user] = useAuthState(fireApp.auth());
   const [apts, setApts] = useState([]);
-  const [newAppt, setNewAppt] = useState({
-    date: '',
-    slot: '',
-    service: '',
-    user: '',
-  });
 
-  //react hook to run as component did mount (hence the empty array as second arg)
+  //react hook to run as component did mount (hence empty array as second arg)
   //initializes async axios request func and then immediately calls it
   //sets the respose.data to this components state as apts
   useEffect(() => {
@@ -55,95 +49,6 @@ export default function Schedule() {
   //uses the above func with our week's worth of appts we're storing on state
   let bookings = makeDays(apts);
 
-  //takes all of one day's appointments (array of objs)
-  //returns a new table for that day where the title is reformatted using moment.js,
-  //makes a header row, and then makes the other rows (individual appt info) in a body
-  //(since all are from the same day, we can use the info from the first one for the table id/header)
-  let dayTable = (dayArr) => {
-    return (
-      <div key={dayArr[0].id}>
-        <h1>{moment(dayArr[0].date).format('dddd, MMMM Do YYYY')}</h1>
-        <div className="divTable">
-          <div className="divBody">
-            <div className="divHead">
-              <div className="divCell">TIME SLOT</div>
-              <div className="divCell">AVAILABILITY</div>
-              <div className="divCell">SERVICE</div>
-            </div>
-            <div className="divBody">
-              {dayArr.map((hourData) => row(hourData))}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  //takes in each appt and creates a row with time, availability, service, and a book now button
-  let row = (hourData) => (
-    <form
-      key={hourData.id}
-      name={hourData.date}
-      className="divFormRow"
-      onChange={(e) => handleChange(e)}
-      onSubmit={(e) => handleSubmit(e)}
-    >
-      <div key={hourData.slot} name="slot" className="divCell">
-        {moment(hourData.slot, 'HH:mm:ss').format('h:mm:ss A')}
-      </div>
-      <div name="availability" className="divCell">
-        {hourData.availability}
-      </div>
-      <div name="service" className="divCell">
-        {services(hourData.service)}
-      </div>
-      {hourData.availability === 'Available' ? (
-        <div className="divCell">
-          <button type="submit">Book Appointment</button>
-        </div>
-      ) : user && hourData.availability === user.email ? (
-        <div className="divCell">
-          <button>Cancel Appointment</button>
-        </div>
-      ) : (
-        <div className="divCell">Booked</div>
-      )}
-    </form>
-  );
-
-  //this will be a drop down menu if there is availability, otherwise it will display the service that is already reserved
-  const services = (serviceOption) => {
-    if (serviceOption) {
-      return <div className="divCell">{serviceOption}</div>;
-    } else {
-      return (
-        <select name="service">
-          <option value="">-</option>
-          <option value="Nail Trim">Nail Trim</option>
-          <option value="Haircut">Haircut</option>
-          <option value="Bath">Bath</option>
-        </select>
-      );
-    }
-  };
-
-  const handleChange = (e) => {
-    let service = e.target.value;
-    let slot = e.currentTarget.children.slot.innerText;
-    let date = e.currentTarget.name;
-    // console.log('service: ', service);
-    // console.log('slot: ', slot);
-    // console.log('date: ', date);
-
-    setNewAppt({ date, slot, service, user: user.email });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    await axios.put('http://localhost:3001/api/appointments', newAppt);
-    window.location.reload(false);
-  };
-
   return (
     <div>
       <div>
@@ -158,7 +63,7 @@ export default function Schedule() {
           </p>
         )}
       </div>
-      {bookings[0].length && bookings.map((dayArr) => dayTable(dayArr))}
+      {bookings[0].length && bookings.map((dayArr) => <Day dayArr={dayArr} />)}
     </div>
   );
 }

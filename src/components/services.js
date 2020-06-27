@@ -24,7 +24,7 @@ function Services() {
           </Link>
         </div>
         <div className="service">
-          <h2>Bath and Tidy - 60 min </h2>
+          <h2>Bath and Tidy - 30 min </h2>
           <p>
             Bath, blow-dry, ears cleaned, nails cut and filed, trimming around
             feet, face, and rear.

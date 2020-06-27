@@ -27,7 +27,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: rgb(180, 235, 213);
+  color: rgb(93, 192, 152);
 }
 
 /* selected link */
@@ -75,7 +75,7 @@ button {
 }
 
 button:hover {
-  background-color: #47a09d;
+  background-color: rgb(93, 192, 152);
 }
 
 .loginForm {
@@ -168,12 +168,7 @@ button:hover {
   background-color: #eee;
   display: table-header-group;
 }
-.divCol {
-  display: table-cell;
-  background-color: green;
-  padding: 3px 10px;
-  border: 1px solid #999999;
-}
+
 .divBody {
   display: table-row-group;
 }

@@ -30,12 +30,16 @@ router.put('/', async (req, res, next) => {
         slot: makeMilitary(req.body.slot),
       },
     });
-    await foundApt.update({
-      service: req.body.service,
-      availability: req.body.user,
-    });
-    await foundApt.save();
-    res.sendStatus(201);
+    if (foundApt.availability === 'Available') {
+      await foundApt.update({
+        service: req.body.service,
+        availability: req.body.user,
+      });
+      await foundApt.save();
+      res.sendStatus(201);
+    } else {
+      next(error);
+    }
   } catch (error) {
     next(error);
   }
