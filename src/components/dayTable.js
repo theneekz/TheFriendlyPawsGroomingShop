@@ -9,9 +9,9 @@ export default function Day({ dayArr }) {
   //(since all are from the same day, we can use the info from the first one for the table id/header)
 
   return (
-    <>
+    <div key={dayArr[0].id}>
       {dayArr && (
-        <div key={dayArr[0].id}>
+        <>
           <h1>{moment(dayArr[0].date).format('dddd, MMMM Do YYYY')}</h1>
           <div className="divTable">
             <div className="divHead">
@@ -25,8 +25,8 @@ export default function Day({ dayArr }) {
               ))}
             </div>
           </div>
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
 }

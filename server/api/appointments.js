@@ -45,4 +45,23 @@ router.put('/', async (req, res, next) => {
   }
 });
 
+router.put('/:apptId', async (req, res, next) => {
+  try {
+    const apptToReset = await Appointments.findOne({
+      where: {
+        id: req.params.apptId,
+        availability: req.body.email,
+      },
+    });
+    apptToReset.update({
+      service: null,
+      availability: 'Available',
+    });
+    await apptToReset.save();
+    res.sendStatus(205);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;

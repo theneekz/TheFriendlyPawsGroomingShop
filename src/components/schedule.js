@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Day from './dayTable';
+import Calendar from './calendar';
 
 export default function Schedule() {
   const [user] = useAuthState(fireApp.auth());
@@ -38,7 +39,7 @@ export default function Schedule() {
       ];
       let result = [];
       for (let day of days) {
-        let tempArr = bookings.filter((booking) => booking.date == day);
+        let tempArr = bookings.filter((booking) => booking.date === day);
         result.push(tempArr);
       }
       return result;
@@ -62,6 +63,9 @@ export default function Schedule() {
             </button>
           </p>
         )}
+      </div>
+      <div>
+        <Calendar bookings={bookings} />
       </div>
       {bookings[0].length && bookings.map((dayArr) => <Day dayArr={dayArr} />)}
     </div>

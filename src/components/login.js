@@ -38,11 +38,16 @@ const Login = () => {
   if (user) {
     return (
       <div>
-        <p>Current User: {user.email}</p>
-        <Link to="/schedule">
-          <button>Book Now</button>
-        </Link>
-        <button onClick={logout}>Log out</button>
+        <div className="mainLogo">
+          <img src="FP.png" />
+        </div>
+        <div className="container">
+          <p>Current User: {user.email}</p>
+          <Link to="/schedule">
+            <button>Book Now</button>
+          </Link>
+          <button onClick={logout}>Log out</button>
+        </div>
       </div>
     );
   }

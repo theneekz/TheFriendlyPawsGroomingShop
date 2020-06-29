@@ -34,6 +34,10 @@ Creates a databse for the Friendly Paws Grooming Shop.<br />
 
 Seeds the app with one work week's worth of empty appointments.<br />
 
+### `npm run dev`
+
+This command will run the next two commands: it will wait for the backend server to be up, then start the front end server.<br />
+
 ### `npm run server`
 
 Starts an express server on port 3001 that listens for all backend requests.

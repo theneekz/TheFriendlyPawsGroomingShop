@@ -68,7 +68,6 @@ export default function Contact() {
       </div>
       <div className="home about">
         <h1>About Us</h1>
-        <hr />
         <h2>
           Friendly Paws is a dog grooming business on the North East side of
           Chicago in Edison Bark - I mean Park. But there is only one employee!
